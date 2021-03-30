@@ -8,4 +8,4 @@ FROM builder
 COPY . /app
 RUN mvn clean install -DskipTests -e
 
-ENTRYPOINT ["java","-jar","/app/target/fizzbuzz-1.0-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","/app/target/FizzBuzz-1.0-SNAPSHOT.jar"]
