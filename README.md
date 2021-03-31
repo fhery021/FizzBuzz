@@ -5,4 +5,4 @@ Fizz Buzz Sequence Game
 
 The input should be a positive, integer number.
 
-The range should not exceed 5 000 000.  
+The range should not exceed 2 000 000.  
