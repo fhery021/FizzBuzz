@@ -33,7 +33,7 @@ public class SequenceController {
             response = SequenceResponse.class
     )
     public ResponseEntity<SequenceResponse> generateSequence(
-            @ApiParam("Last element")
+            @ApiParam("Last element from the FizzBuzz sequence. Should be in range [1 .. 2_000_000]")
             @RequestParam(name = "lastElement", required = true) Integer lastElement
     ){
         if (lastElement == null) {

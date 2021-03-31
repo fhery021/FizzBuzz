@@ -9,6 +9,7 @@ import java.util.Arrays;
 
 import static com.example.FizzBuzz.service.SequenceServiceProperties.MAX_LAST_ELEMENT;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 // No repository => not a @SpringBootTest
 class SequenceServiceImplTest {
@@ -56,4 +57,10 @@ class SequenceServiceImplTest {
         Assertions.assertThrows(InvalidRangeException.class, () -> sequenceService.generateSequence(-5));
     }
 
+    @Test
+    void generateBiggestSequence() {
+        SequenceResponse actualSequence = sequenceService.generateSequence(MAX_LAST_ELEMENT);
+        assertNotNull(actualSequence);
+        assertEquals(actualSequence.getSequence().size(), MAX_LAST_ELEMENT);
+    }
 }
