@@ -4,6 +4,7 @@ import com.example.FizzBuzz.configuration.SwaggerTags;
 import com.example.FizzBuzz.controller.response.SequenceResponse;
 import com.example.FizzBuzz.exception.InvalidRangeException;
 import com.example.FizzBuzz.exception.NoInputDataException;
+import com.example.FizzBuzz.service.SequenceService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -12,16 +13,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import com.example.FizzBuzz.service.SequenceService;
 
-import java.util.List;
+import static com.example.FizzBuzz.service.SequenceServiceProperties.MAX_LAST_ELEMENT;
 
 @RestController
 @RequestMapping("/api/fizzbuzz")
 @Api(tags = {SwaggerTags.FIZZBUZZ})
 public class SequenceController {
-
-    private static final int MAX_LAST_ELEMENT = 2_000_000;
 
     private final SequenceService sequenceService;
 
