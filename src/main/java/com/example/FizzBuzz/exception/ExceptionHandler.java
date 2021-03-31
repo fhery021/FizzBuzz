@@ -17,7 +17,7 @@ public class ExceptionHandler extends ResponseEntityExceptionHandler {
     public ResponseEntity<Object> handleNoInputDataException(NoInputDataException exception, WebRequest request) {
         Map<String, Object> body = new LinkedHashMap<>();
         body.put("timestamp", LocalDateTime.now());
-        body.put("message", "Insufficient input. The lastSequence parameter is mandatory and should be in range [1..2_000_000]");
+        body.put("message", NoInputDataException.CUSTOM_MESSAGE);
 
         return new ResponseEntity<>(body, HttpStatus.BAD_REQUEST);
     }
@@ -26,7 +26,7 @@ public class ExceptionHandler extends ResponseEntityExceptionHandler {
     public ResponseEntity<Object> handleNoInputDataException(InvalidRangeException exception, WebRequest request) {
         Map<String, Object> body = new LinkedHashMap<>();
         body.put("timestamp", LocalDateTime.now());
-        body.put("message", "Invalid input. The lastSequence parameter is mandatory and should be in range [1..2_000_000]");
+        body.put("message", InvalidRangeException.CUSTOM_MESSAGE);
 
         return new ResponseEntity<>(body, HttpStatus.BAD_REQUEST);
     }
